@@ -1,0 +1,51 @@
+say Hello World
+
+say "Testing echo"
+echo Hello World
+
+say "Testing ls"
+ls -l
+
+say "Testing ls with a pipeline"
+ls -l | grep ".cc"
+
+say "Testing grep with redirected input"
+grep "model" < /proc/cpuinfo
+
+say "Testing echo with redirected output (to /dev/null)"
+echo Hello World > /dev/null
+
+say "Testing echo with a pipeline"
+echo Hello World | tr a-z A-Z
+
+say "Testing rm"
+rm -f rootpassword.txt
+
+say "Testing grep with redirected input and output"
+grep root < /etc/passwd > rootpassword.txt
+
+say "Testing date with appended redirected output"
+date >> rootpassword.txt
+
+say "Testing pipelines + redirected input and output + append"
+grep "root" | sed 's/:/   /' < /etc/passwd >> rootpassword.txt
+
+say "Testing appended output again"
+echo "You can delete this file when you are done" >> rootpassword.txt
+
+say "Here is the file we created"
+cat rootpassword.txt
+
+say "Testing sleep with background character"
+say "About to sleep for 3 seconds in background"
+/bin/sleep 3 &
+say "I'm awake again"
+
+say "Testing sleep without background character"
+say "About to sleep for 3 seconds in the foreground"
+/bin/sleep 3
+say "I'm awake again"
+
+say "Good bye, all done!"
+
+quit
