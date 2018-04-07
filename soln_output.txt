@@ -1,0 +1,122 @@
+# This is the output one would expect running: ./msh -x < examples.txt
+Welcome to mini shell!
+The time is 1451685731 seconds, 926503750 nanoseconds since midnight, Jan 1, 1970.
+Type "help" if you are lost.
+What next? About to execute:  say Hello World
+Hello World
+What next? About to execute:  
+What next? About to execute:  say "Testing echo"
+"Testing echo"
+What next? About to execute:  echo Hello World
+Hello World
+Process 9619 finished with status 0.
+What next? About to execute:  
+What next? About to execute:  say "Testing ls"
+"Testing ls"
+What next? About to execute:  ls -l
+total 164
+-rw------- 1 kwalsh hcuser   1162 Jan  1 17:00 examples.txt
+-rw------- 1 kwalsh hcuser   6229 Jan  1 16:38 lexer.c
+-rw------- 1 kwalsh hcuser   1503 Jan  1 13:05 lexer.h
+-rw------- 1 kwalsh hcuser    265 Jan  1 16:47 Makefile
+-rwx------ 1 kwalsh hcuser 103187 Jan  1 16:53 msh
+-rw------- 1 kwalsh hcuser  11043 Jan  1 16:48 msh.c
+-rw------- 1 kwalsh hcuser    402 Jan  1 17:02 my_output.txt
+-rw------- 1 kwalsh hcuser  12398 Jan  1 16:21 stringlist.c
+-rw------- 1 kwalsh hcuser   6765 Jan  1 14:50 stringlist.h
+Process 9620 finished with status 0.
+What next? About to execute:  
+What next? About to execute:  say "Testing ls with a pipeline"
+"Testing ls with a pipeline"
+What next? About to execute:  ls -l | grep ".c"
+-rw------- 1 kwalsh hcuser   6229 Jan  1 16:38 lexer.c
+-rw------- 1 kwalsh hcuser  11043 Jan  1 16:48 msh.c
+-rw------- 1 kwalsh hcuser  12398 Jan  1 16:21 stringlist.c
+Process 9621 finished with status 0.
+Process 9622 finished with status 0.
+What next? About to execute:  
+What next? About to execute:  say "Testing grep with redirected input"
+"Testing grep with redirected input"
+What next? About to execute:  grep "model" < /proc/cpuinfo
+model		: 42
+model name	: Intel(R) Core(TM) i5-2500 CPU @ 3.30GHz
+model		: 42
+model name	: Intel(R) Core(TM) i5-2500 CPU @ 3.30GHz
+model		: 42
+model name	: Intel(R) Core(TM) i5-2500 CPU @ 3.30GHz
+model		: 42
+model name	: Intel(R) Core(TM) i5-2500 CPU @ 3.30GHz
+Process 9623 finished with status 0.
+What next? About to execute:  
+What next? About to execute:  say "Testing echo with redirected output (to /dev/null)"
+"Testing echo with redirected output (to /dev/null)"
+What next? About to execute:  echo Hello World > /dev/null
+Process 9624 finished with status 0.
+What next? About to execute:  
+What next? About to execute:  say "Testing echo with a pipeline"
+"Testing echo with a pipeline"
+What next? About to execute:  echo Hello World | tr a-z A-Z
+Process 9625 finished with status 0.
+HELLO WORLD
+Process 9626 finished with status 0.
+What next? About to execute:  
+What next? About to execute:  say "Testing rm"
+"Testing rm"
+What next? About to execute:  rm -f rootpassword.txt
+Process 9627 finished with status 0.
+What next? About to execute:  
+What next? About to execute:  say "Testing grep with redirected input and output"
+"Testing grep with redirected input and output"
+What next? About to execute:  grep root < /etc/passwd > rootpassword.txt
+Process 9628 finished with status 0.
+What next? About to execute:  
+What next? About to execute:  say "Testing date with appended redirected output"
+"Testing date with appended redirected output"
+What next? About to execute:  date >> rootpassword.txt
+Process 9629 finished with status 0.
+What next? About to execute:  
+What next? About to execute:  say "Testing pipelines + redirected input and output + append"
+"Testing pipelines + redirected input and output + append"
+What next? About to execute:  grep "root" | sed 's/:/   /' < /etc/passwd >> rootpassword.txt
+Process 9630 finished with status 0.
+Process 9631 finished with status 0.
+What next? About to execute:  
+What next? About to execute:  say "Testing appended output again"
+"Testing appended output again"
+What next? About to execute:  echo "You can delete this file when you are done" >> rootpassword.txt
+Process 9632 finished with status 0.
+What next? About to execute:  
+What next? About to execute:  say "Here is the file we created"
+"Here is the file we created"
+What next? About to execute:  cat rootpassword.txt
+root:x:0:0:root:/root:/bin/bash
+operator:x:11:0:operator:/root:/sbin/nologin
+Fri Jan  1 17:02:11 EST 2016
+root   x:0:0:root:/root:/bin/bash
+operator   x:11:0:operator:/root:/sbin/nologin
+You can delete this file when you are done
+Process 9633 finished with status 0.
+What next? About to execute:  
+What next? About to execute:  say "Testing sleep with background character"
+"Testing sleep with background character"
+What next? About to execute:  say "About to sleep for 3 seconds in background"
+"About to sleep for 3 seconds in background"
+What next? About to execute:  /bin/sleep 3 &
+Process 9634 run in background.
+What next? About to execute:  say "I'm awake again"
+"I'm awake again"
+What next? About to execute:  
+What next? About to execute:  say "Testing sleep without background character"
+"Testing sleep without background character"
+What next? About to execute:  say "About to sleep for 3 seconds in the foreground"
+"About to sleep for 3 seconds in the foreground"
+What next? About to execute:  /bin/sleep 3
+Process 9635 finished with status 0.
+What next? About to execute:  say "I'm awake again"
+"I'm awake again"
+What next? About to execute:  
+What next? About to execute:  say "Good bye, all done!"
+"Good bye, all done!"
+What next? About to execute:  
+What next? About to execute:  quit
+Bye bye now!
