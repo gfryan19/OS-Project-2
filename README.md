@@ -1,7 +1,7 @@
 # OS-Project-2
-Project 2 for my Operating Systems course
+Project 2 for my Operating Systems course: msh.c
 
-All original code
+With the exception of the readLine and isFileExecutable functions provided by my professor, msh.c is all original code
 
 This is my minishell or msh project.
 The purpose of this project was to create a program that functioned like the linux shell terminal.
