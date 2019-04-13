@@ -1,4 +1,4 @@
-# OS-Project-2
+# MiniShell Project
 Project 2 for my Operating Systems course: msh.c
 
 With the exception of the readLine and isFileExecutable functions provided by my professor, msh.c is all original code
